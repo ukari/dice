@@ -69,6 +69,8 @@ const Battle = Object.freeze({
     Bless: Symbol("bless")
 });
 
+export { Battle };
+
 const monster1 = {
     counter: 6,
     injury: 7,
