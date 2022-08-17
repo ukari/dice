@@ -9,11 +9,15 @@ console.log(cast([s6, s6]));
 function App() {
     return (
         <ChakraProvider>
-          <HStack h="100vh">
-            <Box>
-              <Button leftIcon={<GiCrossedSwords/>} colorScheme='pink'>挑战</Button>
-            </Box>
-          </HStack>
+          <VStack bg='yellow.200'>
+            <HStack h="100vh">
+              <Box>
+                <Button leftIcon={<GiCrossedSwords/>} colorScheme='pink' sx={{
+                    "line-height": "2em"
+                }}>挑战</Button>
+              </Box>
+            </HStack>
+          </VStack>
         </ChakraProvider>
     );
 }
