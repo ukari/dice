@@ -10,6 +10,7 @@ function App() {
     const [monster, setMonster] = useState(monster1);
     const [dices, setDices] = useState([s6, s6]);
     const [battleResult, setBattleResult] = useState({});
+    const [points, setPoints] = useState(0);
     return (
         <ChakraProvider>
           <VStack bg='yellow.200'>
@@ -30,10 +31,14 @@ function App() {
                         return "开始";
                     }
                 })()
-                    
                 }
                 </Box>
-                <Button leftIcon={<GiCrossedSwords/>} colorScheme='pink' onClick={() => setBattleResult(battle(monster, dices))}>挑战</Button>
+                <Box>点数: {points}</Box>
+                <Button leftIcon={<GiCrossedSwords/>} colorScheme='pink' onClick={() => {
+                    let total = cast(dices);
+                    setPoints(total);
+                    setBattleResult(battle(monster, total));
+                                                                                        }}>挑战</Button>
               </Box>
             </HStack>
           </VStack>

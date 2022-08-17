@@ -81,8 +81,7 @@ const monster1 = {
 
 export { monster1 };
 
-function battle(mon, dices) {
-    let total = cast(dices);
+function battle(mon, total) {
     if (total <= mon.counter) {
         return Battle.Lose;
     } else if (total <= mon.injury) {
